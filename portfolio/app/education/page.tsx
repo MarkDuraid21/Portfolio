@@ -1,16 +1,10 @@
 import Image from 'next/image'
-import KobiBellPic from '../../public/images/kobibell2.png'
-import { FaBook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import MarkDuraidpic from '../../public/images/MarkDuraid.png'
 
-export default function Home() {
-  const backgroundStyle = {
-    backgroundImage: `url('/images/Background.jpg')`, // Ensure the path is correct
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }
+export default function Home() { 
 
   return (
-    <div style={backgroundStyle}>
+    <div>
       <main className="flex items-center justify-center mt-16 py-16 pt-12">
         <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8">
@@ -20,7 +14,18 @@ export default function Home() {
             <p
               className="mb-6 text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
               style={{ lineHeight: '2' }}
-            ></p>
+            >
+              <strong>San Diego State University</strong><br/>
+              Bachelor of Science in Computer Science&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graduation: June 2024<br/>
+              <br></br>
+              <strong>Grossmont College</strong><br/>
+              Computer Science ADT: CSU Associate in Science, 3.8 GPA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 2019 - June 2022<br/>
+              <br></br>
+              <strong>Relevant coursework:</strong><br/>
+              Computer Science: Computer Programming I & II, Networking I & II, Intro to Information Security, Website Development and Organization.
+              Introduction to UNIX/LINUX – Introduction to Databases – Introduction to Software Systems 
+
+            </p>
 
             <div className="mt-6 ml-1">
               {' '}
@@ -29,8 +34,8 @@ export default function Home() {
           </div>
           <div className="md:w-1/2 md:pl-8">
             <Image
-              src={KobiBellPic}
-              alt="Kobi Bell Logo"
+              src={MarkDuraidpic}
+              alt="Mark Duraid Logo"
               className="h-8 mr-3"
               layout="responsive"
             />

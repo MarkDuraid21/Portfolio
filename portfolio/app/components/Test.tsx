@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import KobiBellPic from '../public/images/MarkDuraid.png'
-import { FaLinkedin, FaGithub, FaInstagram, FaBook } from 'react-icons/fa' // Import your required social icons
+import MarkDuraidpic from '../public/images/MarkDuraid.png'
+import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa' // Import your required social icons
 
 export default function Home() {
   const backgroundStyle = {
@@ -86,24 +86,13 @@ export default function Home() {
                     Instagram
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="your-blog-url"
-                    className="hover:underline flex items-center"
-                  >
-                    <span className="px-2">
-                      <FaBook />
-                    </span>
-                    Blog
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
           <div className="md:w-1/2 md:pl-8">
             <Image
-              src={KobiBellPic}
-              alt="Kobi Bell Logo"
+              src={MarkDuraidpic}
+              alt="Mark Duraid Logo"
               className="h-8 mr-3"
               layout="responsive"
             />
