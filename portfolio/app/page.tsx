@@ -23,11 +23,11 @@ export default function Home() {
               the globe.
             </p>
             <a
-              href="../public/images/kobibellresume.pdf"
-              download
+              href="https://docs.google.com/document/d/1ZhZ4n5oWBVkRJ6T0cvmcQZyq34hrc72aA5jdWEi3aS4/edit?usp=sharing"
+              target="_blank"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
             >
-              Download Resume
+              View Resume
               <svg
                 className="w-3.5 h-3.5 ml-2"
                 aria-hidden="true"
