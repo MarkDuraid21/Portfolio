@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import MarkLogo from '../../public/images/MarkLogo (1).png';
+import MarkLogo from '../../public/images/MarkLogo.png';
 
 export default function Navbar() {
   const currentRoute = usePathname();
@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="w-full z-20 left-0 py-8">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
-          <Image src={MarkLogo} alt="Kobi Bell Logo" className="h-8 mr-3" />
+          <Image src={MarkLogo} alt="Mark Duraid Logo" className="h-8 mr-3" />
           <span className="self-center text-2xl font-semibold text-black space-nowrap ">
             Mark Duraid
           </span>

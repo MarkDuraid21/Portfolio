@@ -32,7 +32,7 @@ export default function Home() {
               src={MarkDuraidpic}
               alt="Mark Duraid Logo"
               className="h-8 mr-3"
-              layout="responsive"
+              layout="intrinsic"
             />
           </div>
         </div>
@@ -41,7 +41,6 @@ export default function Home() {
   )
 }
 function renderExperience(title: string, role: string, description: string) {
-  // function body remains the same
   return (
     <>
       <h2

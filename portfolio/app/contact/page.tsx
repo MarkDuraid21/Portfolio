@@ -14,11 +14,11 @@ export default function Home() {
             {/* Here is the iframe for the Google Form */}
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSdox06f0kpFqg9vrMU3-K2vg03rFQDRel0Ev3bZ8JamRxa5QQ/viewform?embedded=true"
-              width="100%"  // Adjusted width to fit mobile screens
+              width="100%"  
               frameBorder="0"
               marginHeight={0}
               marginWidth={0}
-              style={{ minHeight: '500px' }} // Adjust this height according to your form's content
+              style={{ minHeight: '500px' }} 
             >
               Loading…
             </iframe>
@@ -28,7 +28,7 @@ export default function Home() {
               src={MarkDuraidpic}
               alt="Mark Duraid Logo"
               className="h-8 mr-3"
-              layout="responsive"
+              layout="intrinsic"
             />
           </div>
         </div>

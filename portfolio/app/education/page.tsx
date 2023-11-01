@@ -29,7 +29,6 @@ export default function Home() {
 
             <div className="mt-6 ml-1">
               {' '}
-              {/* Increased margin-top and adjusted margin-left */}
             </div>
           </div>
           <div className="md:w-1/2 md:pl-8">
@@ -37,7 +36,7 @@ export default function Home() {
               src={MarkDuraidpic}
               alt="Mark Duraid Logo"
               className="h-8 mr-3"
-              layout="responsive"
+              layout="intrinsic"
             />
           </div>
         </div>

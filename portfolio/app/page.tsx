@@ -46,9 +46,7 @@ export default function Home() {
             </a>
             <div className="mt-6 ml-1">
               {' '}
-              {/* Increased margin-top and adjusted margin-left */}
               <ul className="flex items-center text-sm font-medium text-gray-500">
-                {/* Adjusted margins */}
                 <li className="mr-6">
                   <a
                     href="https://www.linkedin.com/in/markduraid"
@@ -93,7 +91,7 @@ export default function Home() {
               src={MarkDuraidpic}
               alt="Mark Duraid Logo"
               className="h-8 mr-3"
-              layout="responsive"
+              layout="intrinsic"
             />
           </div>
         </div>

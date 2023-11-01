@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import MarkDuraidpic from '../public/images/MarkDuraid.png'
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa' // Import your required social icons
+import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'
 
 export default function Home() {
   const backgroundStyle = {
-    backgroundImage: `url('/images/Background.jpg')`, // Ensure the path is correct
+    backgroundImage: `url('/images/Background.jpg')`, 
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }
@@ -50,9 +50,7 @@ export default function Home() {
             </a>
             <div className="mt-6 ml-1">
               {' '}
-              {/* Increased margin-top and adjusted margin-left */}
               <ul className="flex items-center text-sm font-medium text-gray-500">
-                {/* Adjusted margins */}
                 <li className="mr-6">
                   <a
                     href="https://www.linkedin.com/in/mark-duraid-452a30247/"
@@ -94,7 +92,7 @@ export default function Home() {
               src={MarkDuraidpic}
               alt="Mark Duraid Logo"
               className="h-8 mr-3"
-              layout="responsive"
+              layout="intrinsic"
             />
           </div>
         </div>
