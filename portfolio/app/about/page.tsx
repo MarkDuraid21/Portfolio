@@ -15,10 +15,8 @@ export default function Home() {
               className="mb-6 text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
               style={{ lineHeight: '2' }}
             >
-              I’m a motivated Computer Science Student with a 
-              passion in Cybersecurity. As a first generation college student and Graduating with Bachelors Degree in May 2024,
-              leaves me trilled to embark on an impactful career in the tech industry 
-              and change the cyber world!
+              I am an ambitious Computer Science student deeply interested in Cybersecurity. Being a first-generation college student who moved to the U.S. in pursuit of better opportunities,
+              I am set to graduate with a Bachelor's Degree in May 2024. This journey excites me as I prepare to launch a significant career in the tech industry and make a meaningful impact on the cybersecurity landscape!
             </p>
 
             <div className="mt-6 ml-1">
