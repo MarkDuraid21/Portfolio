@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import MarkDuraidpic from '../../public/images/MarkDuraid.png'
 
 export default function Home() { 
