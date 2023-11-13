@@ -22,28 +22,6 @@ export default function Home() {
               Enthusiast located in the United States, looking for work around
               the globe.
             </p>
-            <a
-              href="https://docs.google.com/document/d/1ZhZ4n5oWBVkRJ6T0cvmcQZyq34hrc72aA5jdWEi3aS4/edit?usp=sharing"
-              target="_blank"
-              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
-            >
-              View Resume
-              <svg
-                className="w-3.5 h-3.5 ml-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
             <div className="mt-6 ml-1">
               {' '}
               <ul className="flex items-center text-sm font-medium text-gray-500">
