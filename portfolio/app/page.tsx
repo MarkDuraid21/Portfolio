@@ -1,10 +1,8 @@
-import Image from "next/legacy/image"
-import MarkDuraidpic from '../public/images/MarkDuraid.png'
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import Image from "next/legacy/image";
+import MarkDuraidpic from '../public/images/MarkDuraid.png';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Home() {
-
-
   return (
     <div>
       <main className="flex items-center justify-center mt-16 py-16 pt-12">
@@ -18,12 +16,9 @@ export default function Home() {
               className="mb-6 text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
               style={{ lineHeight: '2' }}
             >
-              A Computer Science Student and Cybersecurity
-              Enthusiast located in the United States, looking for work around
-              the globe.
+              A Computer Science Student and Cybersecurity Enthusiast located in the United States, looking for work around the globe.
             </p>
             <div className="mt-6 ml-1">
-              {' '}
               <ul className="flex items-center text-sm font-medium text-gray-500">
                 <li className="mr-6">
                   <a
@@ -32,7 +27,7 @@ export default function Home() {
                     className="hover:underline flex items-center"
                   >
                     <span className="px-2">
-                      <FaLinkedin />
+                      <FaLinkedin style={{ color: 'teal' }} />
                     </span>
                     LinkedIn
                   </a>
@@ -44,7 +39,7 @@ export default function Home() {
                     className="hover:underline flex items-center"
                   >
                     <span className="px-2">
-                      <FaGithub />
+                      <FaGithub style={{ color: 'purple' }} />
                     </span>
                     GitHub
                   </a>
@@ -56,7 +51,7 @@ export default function Home() {
                     className="hover:underline flex items-center"
                   >
                     <span className="px-2">
-                      <FaInstagram />
+                      <FaInstagram style={{ color: 'red' }} />
                     </span>
                     Instagram
                   </a>
