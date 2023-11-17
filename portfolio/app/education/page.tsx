@@ -14,22 +14,20 @@ export default function Home() {
             </h1>
             {renderEducation(
               'San Diego State University',
-              'Bachelor of Science in Computer Science',
-              'Graduation: June 2024'
+              'Bachelor of Science in Computer Science | Graduation: May 2024',
+              true 
             )}
             {renderEducation(
               'Grossmont College',
-              'Computer Science ADT: CSU Associate in Science, 3.8 GPA',
-              'June 2019 - June 2022'
+              'Computer Science ADT: CSU Associate in Science, 3.8 GPA | Graduated: June 2022',
+              true 
             )}
-            <p
-              className="mb-2 text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
-              style={{ lineHeight: '2' }}
-            >
-              <span className="font-bold text-gray-900">Relevant coursework:</span><br />
-              Computer Science: Computer Programming I & II, Networking I & II, Intro to Information Security, Website Development and Organization.
-              Introduction to UNIX/LINUX – Introduction to Databases – Introduction to Software Systems
-            </p>
+            <div className="mb-2 text-sm font-normal text-gray-900 lg:text-sm dark:text-gray-400">
+              <span className="font-bold">Relevant coursework:</span><br />
+              <span className="text-gray-600"> 
+                Computer Science: Computer Programming I & II, Networking I & II, Intro to Information Security, Website Development and Organization. Introduction to UNIX/LINUX – Introduction to Databases – Introduction to Software Systems
+              </span>
+            </div>
             <div className="flex items-center">
               <div style={{ display: 'flex' }}>
                 <Image
@@ -37,16 +35,16 @@ export default function Home() {
                   alt="SDSU Logo"
                   className="h-8 mr-3"
                   layout="fixed"
-                  width={150} // Adjust width based on aspect ratio
-                  height={150} // Adjust height based on aspect ratio
+                  width={150} 
+                  height={150} 
                 />
                 <Image
                   src={GrossmontImage}
                   alt="Grossmont College Logo"
                   className="h-8 mr-3"
                   layout="fixed"
-                  width={150} // Adjust width based on aspect ratio
-                  height={150} // Adjust height based on aspect ratio
+                  width={150} 
+                  height={150} 
                 />
               </div>
             </div>
@@ -65,22 +63,22 @@ export default function Home() {
   )
 }
 
-function renderEducation(school: string, degree: string, timeline: string) {
+function renderEducation(school: string, details: string, isGray: boolean) {
   return (
     <>
       <div className="flex items-center">
         <h2
           className="text-md font-bold text-gray-900 lg:text-md"
-          style={{ lineHeight: '2' }}
+          style={{ lineHeight: '1.5' }} 
         >
           {school}
         </h2>
       </div>
       <p
-        className="mb-2 text-sm font-italic text-gray-900"
-        style={{ lineHeight: '2' }}
+        className={`mb-2 text-sm font-italic ${isGray ? 'text-gray-600' : 'text-gray-900'}`}
+        style={{ lineHeight: '2', marginTop: '-0.25rem' }} 
       >
-        {degree}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{timeline}
+        {details}
       </p>
     </>
   )

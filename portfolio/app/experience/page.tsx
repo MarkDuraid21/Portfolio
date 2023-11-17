@@ -19,7 +19,7 @@ export default function Home() {
             {renderExperience(
               'Grossmont-Cuyamaca Community College District',
               'Financial Aid Student Ambassador | Augest 2021—Present',
-              'I created a tool to support Site Assistance Visits for Command Cyber Readiness Inspections. I provided timely updates, maintained data security, and collaborated with cross-functional teams to meet user requirements. I also designed wireframes to improve usability, significantly reducing PowerPoint generation time. I was responsible for organizing project management activities, ensuring project success.'
+              'I\'ve guided students through the FAFSA application process by providing personalized one-on-one assistance, offering translations, and leveraging financial aid software to keep them informed about their file statuses. Additionally, I\'ve organized educational events to clarify financial aid concepts. Furthermore, I\'ve contributed to team success by training new members in documentation practices and \'SAM\' financial aid system, fostering effective teamwork.'
             )}
 
             <div className="mt-6 ml-1">

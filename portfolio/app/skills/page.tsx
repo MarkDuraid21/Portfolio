@@ -14,6 +14,7 @@ export default function Home() {
               className="text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
               style={{ lineHeight: '2' }}
             >
+              {/* Skills with one color */}
               ❖ Python, JavaScript, HTML, CSS, C++, Java<br/>
               ❖ Git/Github, BootStrap, Electron<br/>
               ❖ Adobe Photoshop, Adobe Illustrator<br/>
@@ -23,15 +24,16 @@ export default function Home() {
               ❖ Web Security Practices (HTTPS, CORS, XSS prevention)<br/>
               ❖ Agile Development methodologies<br/>
               ❖ Trunk-based Development<br/>
-              ❖ Time managemnt, Communication, Teamwork, Quick learner <br/>
+              ❖ Time management, Communication, Teamwork, Quick learner <br/>
+              {/* Skills with another color */}
               <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">Languages</h2>
-              ❖ <span className="text-gray-900">English</span><br/>
-              ❖ <span className="text-gray-900">Arabic</span><br/>
-              ❖ <span className="text-gray-900">Aramaic (Chaldean)</span><br/>
+              ❖ English<br/>
+              ❖ Arabic<br/>
+              ❖ Aramaic (Chaldean)<br/>
               <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">Certifications</h2>
-              ❖ <span className="text-gray-900">CompTIA Security+ (in progress)<br/></span>
-              ❖ <span className="text-gray-900">Cyber Awareness Challenge May 2023<br/></span>
-              ❖ <span className="text-gray-900">NREIP Completion August 2023</span>
+              ❖ CompTIA Security+ (in progress)<br/>
+              ❖ Cyber Awareness Challenge May 2023<br/>
+              ❖ NREIP Completion August 2023
             </p>
           </div>
           <div className="md:w-1/2 md:pl-8">
