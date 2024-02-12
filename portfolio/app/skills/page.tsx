@@ -15,8 +15,8 @@ export default function Home() {
               style={{ lineHeight: '2' }}
             >
               {/* Skills with one color */}
-              ❖ Python, JavaScript, HTML, CSS, C++, Java<br/>
-              ❖ Git/Github, BootStrap, Electron<br/>
+              ❖ Python, JavaScript, HTML, CSS, C++, Java, GO<br/>
+              ❖ Git/Github, BootStrap, Electron, STIG Viewer<br/>
               ❖ Adobe Photoshop, Adobe Illustrator<br/>
               ❖ Microsoft: Excel, Powerpoint, Word<br/>
               ❖ UNIX/Linux familiarity<br/>
