@@ -26,11 +26,15 @@ export default function Home() {
               ❖ Trunk-based Development<br/>
               ❖ Time management, Communication, Teamwork, Quick learner <br/>
               {/* Skills with another color */}
-              <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">Languages</h2>
+              <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
+                <span>My </span><span className="text-red-600">Languages</span>
+              </h2>
               ❖ English<br/>
               ❖ Arabic<br/>
               ❖ Aramaic (Chaldean)<br/>
-              <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">Certifications</h2>
+              <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
+                <span>My </span><span className="text-red-600">Certifications</span>
+              </h2>
               ❖ CompTIA Security+ (in progress)<br/>
               ❖ Cyber Awareness Challenge May 2023<br/>
               ❖ NREIP Completion August 2023
