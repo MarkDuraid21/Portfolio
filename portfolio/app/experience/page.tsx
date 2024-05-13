@@ -13,7 +13,7 @@ export default function Home() {
             </h1>
             {renderExperience(
               'Naval Information Warfare Center Pacific',
-              'Security Automation Engineer Intern | January 2024 - Present',
+              'Security Automation Engineer Intern | January 2024 - March 2024',
               'Utilized GO to categorize and implement various Security Technical Implementation Guide (STIG) benchmarks, enhancing the overall security posture of target systems. Enhanced CyberKnight software by incorporating the Cybersecurity Vulnerability Analysis (CVA) process. Developed a custom application taking in ‘Stig’ objects, facilitating the comparison of vulnerability statuses. Automated routine tasks within the CyberKnight project, showcasing proficiency in security automation and the ability to optimize processes for increased efficiency. Facilitated regular coordination by participating in bi-weekly meetings with the project manager, security team, and developers. These sessions were instrumental in fostering effective communication, aligning poet goals, and addressing security considerations within the development process. Contributed to the evaluation of new security tools and technologies, staying informed about advancements in the field and recommending improvements to the existing security infrastructure.'
             )}
             {renderExperience(
