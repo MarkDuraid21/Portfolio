@@ -14,7 +14,7 @@ export default function Home() {
             </h1>
             {renderEducation(
               'San Diego State University',
-              'Bachelor of Science in Computer Science | Graduation: May 2024',
+              'Bachelor of Science in Computer Science, 3.6 GPA | Graduated: May 2024',
               true 
             )}
             {renderEducation(
@@ -25,7 +25,7 @@ export default function Home() {
             <div className="mb-2 text-sm font-normal text-gray-900 lg:text-sm dark:text-gray-400">
               <span className="font-bold">Relevant coursework:</span><br />
               <span className="text-gray-600"> 
-                Computer Science: Computer Programming I & II, Networking I & II, Intro to Information Security, Website Development and Organization. Introduction to UNIX/LINUX – Introduction to Databases – Introduction to Software Systems
+              Computer Security, Computer Programming I & II, Networking I & II, Intro to Information Security, Website Development and Organization. Introduction to UNIX/LINUX – Introduction to Databases – Introduction to Software Systems
               </span>
             </div>
             <div className="flex items-center">

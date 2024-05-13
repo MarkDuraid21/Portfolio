@@ -16,7 +16,7 @@ export default function Home() {
               style={{ lineHeight: '2' }}
             >
               I am an ambitious Computer Science student deeply interested in Cybersecurity. Being a first-generation college student who moved to the U.S. in pursuit of better opportunities,
-              I am set to graduate with a Bachelor's Degree in May 2024. This journey excites me as I prepare to launch a significant career in the tech industry and make a meaningful impact on the cybersecurity landscape!
+              I graduated with a Bachelor's Degree in May 2024. This journey excites me as I prepare to launch a significant career in the tech industry and make a meaningful impact on the cybersecurity landscape!
             </p>
 
             <div className="mt-6 ml-1">
