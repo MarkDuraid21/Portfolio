@@ -19,7 +19,7 @@ export default function Home() {
             )}
             {renderEducation(
               'Grossmont College',
-              'Computer Science ADT: CSU Associate in Science, 3.8 GPA | Graduated: June 2022',
+              'Associate of Science in Computer Science, 3.8 GPA | Graduated: June 2022',
               true 
             )}
             <div className="mb-2 text-sm font-normal text-gray-900 lg:text-sm dark:text-gray-400">

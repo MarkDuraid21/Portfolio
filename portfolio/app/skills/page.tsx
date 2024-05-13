@@ -17,11 +17,12 @@ export default function Home() {
               {/* Skills with one color */}
               ❖ Python, JavaScript, HTML, CSS, C++, Java, GO<br/>
               ❖ Git/Github, BootStrap, Electron, STIG Viewer<br/>
-              ❖ Adobe Photoshop, Adobe Illustrator<br/>
-              ❖ Microsoft: Excel, Powerpoint, Word<br/>
+              ❖ Kali Linux, Nmap, Metasploit, Vulnerability Assessment, SSH	, SCP, FTP<br/>
               ❖ UNIX/Linux familiarity<br/>
               ❖ Website and Application Development<br/>
               ❖ Web Security Practices (HTTPS, CORS, XSS prevention)<br/>
+              ❖ Adobe Photoshop, Adobe Illustrator<br/>
+              ❖ Microsoft: Excel, Powerpoint, Word<br/>
               ❖ Agile Development methodologies<br/>
               ❖ Trunk-based Development<br/>
               ❖ Time management, Communication, Teamwork, Quick learner <br/>
