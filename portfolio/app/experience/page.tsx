@@ -13,6 +13,11 @@ export default function Home() {
             </h1>
             {renderExperience(
               'Naval Information Warfare Center Pacific',
+              'Computer Scientist | July 2024 - Present',
+              ''
+            )}
+            {renderExperience(
+              'Naval Information Warfare Center Pacific',
               'Security Automation Engineer Intern | January 2024 - March 2024',
               'Utilized GO to categorize and implement various Security Technical Implementation Guide (STIG) benchmarks, enhancing the overall security posture of target systems. Enhanced CyberKnight software by incorporating the Cybersecurity Vulnerability Analysis (CVA) process. Developed a custom application taking in ‘Stig’ objects, facilitating the comparison of vulnerability statuses. Automated routine tasks within the CyberKnight project, showcasing proficiency in security automation and the ability to optimize processes for increased efficiency. Facilitated regular coordination by participating in bi-weekly meetings with the project manager, security team, and developers. These sessions were instrumental in fostering effective communication, aligning poet goals, and addressing security considerations within the development process. Contributed to the evaluation of new security tools and technologies, staying informed about advancements in the field and recommending improvements to the existing security infrastructure.'
             )}
@@ -23,12 +28,12 @@ export default function Home() {
             )}
             {renderExperience(
               'Naval Information Warfare Center Pacific',
-              'Security Software Engineer Intern | June 2023—August 2023',
+              'Security Software Engineer Intern | June 2023 — August 2023',
               'Worked as a Full Stack Developer to create a specialized tool utilizing RMF (Risk Management Framework) for the Navy, streamlining the process of managing and assessing cybersecurity risks for critical systems. Gained valuable experience in Agile Development methodologies, ensuring efficient and collaborative project management. Demonstrated proficiency in Trunk Based Development, promoting continuous integration and streamlined codebase maintenance. Collaborated effectively with a team to successfully deliver a project using RMF Step 2. Led daily standups/meetings, fostering clear communication and coordination among team members. Participated in the creation of wireframes, providing a visual blueprint for the project before commencing development. Followed set designs to maintain consistency in UI/UX and deliver a user-friendly application. Conducted regular user interviews. Gathering insights and feedback to shape the app’s design and functionality based on user preferences.'
             )}
             {renderExperience(
               'Grossmont-Cuyamaca Community College District',
-              'Financial Aid Student Ambassador | August 2021—Present',
+              'Financial Aid Student Ambassador | August 2021 — May 2024',
               'I\'ve guided students through the FAFSA application process by providing personalized one-on-one assistance, offering translations, and leveraging financial aid software to keep them informed about their file statuses. Additionally, I\'ve organized educational events to clarify financial aid concepts. Furthermore, I\'ve contributed to team success by training new members in documentation practices and \'SAM\' financial aid system, fostering effective teamwork.'
             )}
 
