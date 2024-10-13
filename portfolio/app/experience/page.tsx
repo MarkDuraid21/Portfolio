@@ -14,7 +14,7 @@ export default function Home() {
             {renderExperience(
               'Naval Information Warfare Center Pacific',
               'Computer Scientist | July 2024 - Present',
-              ''
+              'Conducted advanced vulnerability assessments using ACAS (Assured Compliance Assessment Solution) to identify and mitigate security risks within enterprise systems. Executed Security Technical Implementation Guides (STIGs) on a windows server, ensuring compliance with DoD cybersecurity standards and enhancing system security postures Collaborated with cross-functional teams to prioritize and remediate vulnerabilities identified during ACAS scans, improving overall system resilience. Analyze scan results and report vulnerabilities to safeguard against potential exploits and unauthorized access.'
             )}
             {renderExperience(
               'Naval Information Warfare Center Pacific',
