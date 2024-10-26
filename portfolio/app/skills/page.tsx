@@ -15,17 +15,17 @@ export default function Home() {
               style={{ lineHeight: '2' }}
             >
               {/* Skills with one color */}
-              ❖ Python, JavaScript, HTML, CSS, C++, Java, GO<br/>
-              ❖ Git/Github, BootStrap, Electron, STIG Viewer<br/>
-              ❖ Kali Linux, Nmap, Metasploit, Vulnerability Assessment, SSH	, SCP, FTP<br/>
-              ❖ UNIX/Linux familiarity<br/>
-              ❖ Website and Application Development<br/>
-              ❖ Web Security Practices (HTTPS, CORS, XSS prevention)<br/>
-              ❖ Adobe Photoshop, Adobe Illustrator<br/>
-              ❖ Microsoft: Excel, Powerpoint, Word<br/>
+              ❖ Programming Languages: Python, JavaScript, HTML, CSS, C++, Java, GO<br/>
+              ❖ Version Control & Development Tools: Git/Github, BootStrap, Electron<br/>
+              ❖ Cybersecurity & Compliance Tools: ACAS, STIG Viewer, Kali Linux, Nmap, Metasploit, Vulnerability Assessment, SSH, SCP, FTP<br/>
+              ❖ Operating Systems: Advanced familiarity with UNIX/Linux, Windows Server, MacOS<br/>
+              ❖ Security Implementation: STIG Compliance, System Hardening, Vulnerability Remediation, Risk Assessment<br/>
+              ❖ Web Development & Security: Website and Application Development, Web Security Practices (HTTPS, CORS, XSS prevention)<br/>
+              ❖ Adobe Creative Suite: Photoshop, Illustrator<br/>
+              ❖ Microsoft Office: Excel, PowerPoint, Word<br/>
               ❖ Agile Development methodologies<br/>
-              ❖ Trunk-based Development<br/>
-              ❖ Time management, Communication, Teamwork, Quick learner <br/>
+              ❖ Development Methodologies: Agile, Trunk-based Development<br/>
+              ❖ Professional Skills: Time management, Communication, Cross-functional Collaboration, Quick learning<br/>
               {/* Skills with another color */}
               <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
                 <span>My </span><span className="text-red-600">Languages</span>
