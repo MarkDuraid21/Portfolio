@@ -32,7 +32,6 @@ export default function Home() {
               </h2>
               ❖ English<br/>
               ❖ Arabic<br/>
-              ❖ Aramaic (Chaldean)<br/>
               <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
                 <span>My </span><span className="text-red-600">Certifications</span>
               </h2>
