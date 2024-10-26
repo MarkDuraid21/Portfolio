@@ -17,14 +17,14 @@ export default function Home() {
               {/* Skills with one color */}
               ❖ <strong>Programming Languages:</strong> Python, JavaScript, HTML, CSS, C++, Java, GO<br/>
               ❖ <strong>Version Control & Development Tools:</strong> Git/Github, BootStrap, Electron<br/>
-              ❖ <strong>Cybersecurity & Compliance Tools:</strong> ACAS, STIG Viewer, Kali Linux, Nmap, Metasploit, Vulnerability Assessment, SSH, SCP, FTP<br/>
+              ❖ <strong>Cybersecurity & Compliance Tools:</strong> ACAS, STIG Viewer, Kali Linux, Nmap,   Metasploit, Vulnerability Assessment, SSH, SCP, FTP<br/>
               ❖ <strong>Operating Systems:</strong> Advanced familiarity with UNIX/Linux, Windows Server, MacOS<br/>
-              ❖ <strong>Security Implementation:</strong> STIG Compliance, System Hardening, Vulnerability Remediation, Risk Assessment<br/>
-              ❖ <strong>Web Development & Security:</strong> Website and Application Development, Web Security Practices (HTTPS, CORS, XSS prevention)<br/>
+              ❖ <strong>Security Implementation:</strong> STIG Compliance, System Hardening, Vulnerability   Remediation, Risk Assessment<br/>
+              ❖ <strong>Web Development & Security:</strong> Website and Application Development, Web Security   Practices (HTTPS, CORS, XSS prevention)<br/>
               ❖ <strong>Adobe Creative Suite:</strong> Photoshop, Illustrator<br/>
               ❖ <strong>Microsoft Office:</strong> Excel, PowerPoint, Word<br/>
               ❖ <strong>Development Methodologies:</strong> Agile, Trunk-based Development<br/>
-              ❖ <strong>Professional Skills:</strong> Time management, Communication, Cross-functional Collaboration, Quick learning<br/>
+              ❖ <strong>Professional Skills:</strong> Time management, Communication, Cross-functional   Collaboration, Quick learning<br/>
               {/* Skills with another color */}
               <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
                 <span>My </span><span className="text-red-600">Languages</span>
