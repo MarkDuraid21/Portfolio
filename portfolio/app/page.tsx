@@ -16,7 +16,7 @@ export default function Home() {
               className="mb-6 text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
               style={{ lineHeight: '2' }}
             >
-              A Computer Science Graduate and Cybersecurity Enthusiast located in the United States, looking to fortify and protect sophisticated applications and systems.
+              A Security Analyst and System Administrator with a Computer Science background and a passion for Cybersecurity, based in the United States. I focus on fortifying and protecting advanced applications and systems to ensure robust security and operational integrity.
             </p>
             <div className="mt-6 ml-1">
               <ul className="flex items-center text-sm font-medium text-gray-500">
