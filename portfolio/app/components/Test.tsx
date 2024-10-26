@@ -22,9 +22,7 @@ export default function Home() {
               className="mb-6 text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
               style={{ lineHeight: '2' }}
             >
-              This is Mark Duraid, Computer Science Student, Cybersecurity
-              Enthusiast located in the United States, looking for work around
-              the globe.
+              A Security Analyst and System Administrator with a Computer Science background and a passion for Cybersecurity, based in the United States. I focus on fortifying and protecting advanced applications and systems to ensure robust security and operational integrity.
             </p>
             <a
               href="/path-to-your-resume.pdf"
