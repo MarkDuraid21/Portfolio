@@ -34,7 +34,7 @@ export default function Home() {
               <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
                 <span>My </span><span className="text-red-600">Certifications</span>
               </h2>
-              ❖ CompTIA Security+ (in progress)<br/>
+              ❖ CompTIA Security+ March 6, 2025<br/>
               ❖ Cyber Awareness Challenge May 2023<br/>
               ❖ NREIP Completion August 2023
             </p>
