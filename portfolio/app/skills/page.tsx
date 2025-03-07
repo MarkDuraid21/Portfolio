@@ -35,8 +35,9 @@ export default function Home() {
                 <span>My </span><span className="text-red-600">Certifications</span>
               </h2>
               ❖ CompTIA Security+ March 6, 2025<br/>
-              ❖ Cyber Awareness Challenge May 2023<br/>
-              ❖ NREIP Completion August 2023
+              ❖ Microsft Security Fundamentals<br/>
+              ❖ NREIP Completion August 2023<br/>
+              ❖ Cyber Awareness Challenge May 2023
             </p>
           </div>
           <div className="md:w-1/2 md:pl-8">
