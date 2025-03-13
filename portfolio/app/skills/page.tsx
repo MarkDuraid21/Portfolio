@@ -34,7 +34,7 @@ export default function Home() {
               <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
                 <span>My </span><span className="text-red-600">Certifications</span>
               </h2>
-              ❖ CompTIA Network+ Inprogress
+              ❖ CompTIA Network+ Inprogress<br/>
               ❖ CompTIA Security+ March 2025<br/>
               ❖ Microsft Security Fundamentals March 2025<br/>
               ❖ NREIP Completion August 2023<br/>
