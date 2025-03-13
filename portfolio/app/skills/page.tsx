@@ -1,19 +1,28 @@
-import Image from "next/legacy/image";
-import { ExternalLink } from "lucide-react"; 
-import MarkDuraidpic from '../../public/images/MarkDuraid.png';
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronDown, ChevronUp } from "lucide-react"; // Import icons
+import MarkDuraidpic from "../../public/images/MarkDuraid.png";
+import SecurityPlus from "../../public/images/SecurityPlus.png";
+import MicrosoftSecurity from "../../public/images/SecurityFundamentals.png";
+import CyberAwareness from "../../public/images/cyberawareness.png";
+import NREIP from "../../public/images/NreipCert.png";
 
 const certificates = [
-  {
-    name: "CompTIA Security+ March 2025",
-    link: "https://www.udemy.com/certificate/UC-7afadc86-d4df-4193-b4a2-8ff085ed4d80/", 
-  },
-  {
-    name: "Microsoft Security Fundamentals March 2025",
-    link: "https://www.udemy.com/certificate/UC-c519023f-2ed3-4adb-a877-83967f5a9e7b/", 
-  }
+  { name: "CompTIA Security+ March 2025", image: SecurityPlus },
+  { name: "Microsoft Security Fundamentals March 2025", image: MicrosoftSecurity },
+  { name: "Cyber Awareness Challenge July 2024", image: CyberAwareness },
+  { name: "NREIP Completion August 2023", image: NREIP },
 ];
 
-export default function Home() { 
+export default function Home() {
+  const [visibleCerts, setVisibleCerts] = useState<{ [key: number]: boolean }>({});
+
+  const toggleCertificate = (index: number) => {
+    setVisibleCerts((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
   return (
     <div>
       <main className="flex items-center justify-center mt-16 py-16 pt-12">
@@ -22,60 +31,87 @@ export default function Home() {
             <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
               <span>My </span><span className="text-red-600">Skills</span>
             </h1>
-            <p className="text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400" style={{ lineHeight: '2' }}>
-              {/* Skills Section */}
-              ❖ <strong>Programming Languages:</strong> Python, JavaScript, HTML, CSS, C++, Java, GO<br/>
-              ❖ <strong>Version Control & Development Tools:</strong> Git/Github, BootStrap, Electron<br/>
-              ❖ <strong>Cybersecurity & Compliance Tools:</strong> ACAS, STIG Viewer, Kali Linux, Nmap, Metasploit, Vulnerability Assessment, SSH, SCP, FTP<br/>
-              ❖ <strong>Operating Systems:</strong> Advanced familiarity with UNIX/Linux, Windows Server, MacOS<br/>
-              ❖ <strong>Security Implementation:</strong> STIG Compliance, System Hardening, Vulnerability Remediation, Risk Assessment<br/>
-              ❖ <strong>Web Development & Security:</strong> Website and Application Development, Web Security Practices (HTTPS, CORS, XSS prevention)<br/>
-              ❖ <strong>Adobe Creative Suite:</strong> Photoshop, Illustrator<br/>
-              ❖ <strong>Microsoft Office:</strong> Excel, PowerPoint, Word<br/>
-              ❖ <strong>Development Methodologies:</strong> Agile, Trunk-based Development<br/>
-              ❖ <strong>Professional Skills:</strong> Time management, Communication, Cross-functional Collaboration, Quick learning<br/>
+            <div className="text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400 space-y-4">
+              <div>
+                <h2 className="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-100">
+                  Technical <span className="text-red-600">Skills</span>
+                </h2>
+                <ul className="space-y-1">
+                  <li>❖ <strong>Programming Languages:</strong> Python, JavaScript, HTML, CSS, C++, Java, GO</li>
+                  <li>❖ <strong>Version Control & Development Tools:</strong> Git/Github, Bootstrap, Electron</li>
+                  <li>❖ <strong>Cybersecurity & Compliance Tools:</strong> ACAS, STIG Viewer, Kali Linux, Nmap, Metasploit, Vulnerability Assessment, SSH, SCP, FTP</li>
+                  <li>❖ <strong>Operating Systems:</strong> UNIX/Linux, Windows Server, MacOS</li>
+                  <li>❖ <strong>Security Implementation:</strong> STIG Compliance, System Hardening, Vulnerability Remediation, Risk Assessment</li>
+                  <li>❖ <strong>Web Development & Security:</strong> Website and Application Development, Web Security Practices (HTTPS, CORS, XSS prevention)</li>
+                  <li>❖ <strong>Adobe Creative Suite:</strong> Photoshop, Illustrator</li>
+                  <li>❖ <strong>Microsoft Office:</strong> Excel, PowerPoint, Word</li>
+                  <li>❖ <strong>Development Methodologies:</strong> Agile, Trunk-based Development</li>
+                  <li>❖ <strong>Professional Skills:</strong> Time management, Communication, Cross-functional Collaboration, Quick learning</li>
+                </ul>
+              </div>
 
-              {/* Language Section */}
-              <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
-                <span>My </span><span className="text-red-600">Languages</span>
-              </h2>
-              ❖ English<br/>
-              ❖ Arabic<br/>
+              <div>
+                <h2 className="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-100">
+                  Languages
+                </h2>
+                <ul className="space-y-1">
+                  <li>❖ English</li>
+                  <li>❖ Arabic</li>
+                </ul>
+              </div>
 
-              {/* Certifications Section */}
-              <h2 className="mb-2 text-xl font-extrabold leading-none tracking-tight text-gray-900">
-                <span>My </span><span className="text-red-600">Certifications</span>
-              </h2>
-              <ul className="mt-2">
-                <li>❖ CompTIA Network+ In Progress</li>
-
-                {certificates.map((cert, index) => (
-                  <li key={index} className="flex items-center">
-                    <span>❖ {cert.name}</span>
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-2 border border-black text-black px-2 py-0.5 text-xs font-semibold rounded flex items-center hover:bg-gray-100 transition-all"
-                    >
-                      Show Credential
-                      <ExternalLink size={16} className="ml-1" />
-                    </a>
+              <div>
+                <h2 className="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-100">
+                  Certifications
+                </h2>
+                <ul className="mt-2 space-y-2"> {/* Reduced spacing */}
+                  <li className="flex items-center">
+                    <p>❖ CompTIA Network+ (In-Progress)</p>
                   </li>
-                ))}
 
-                <li>❖ Cyber Awareness Challenge July 2024</li>
-                <li>❖ NREIP Completion August 2023</li>
-              </ul>
-            </p>
+                  {certificates.map((cert, index) => (
+                    <li key={index} className="flex items-center">
+                      <p>❖ {cert.name}</p>
+                      <button
+                        onClick={() => toggleCertificate(index)}
+                        className="ml-2 border border-black text-black px-2 py-0.5 text-xs font-semibold rounded flex items-center hover:bg-gray-100 transition-all"
+                      >
+                        {visibleCerts[index] ? "Hide Credential" : "Show Credential"}
+                        {visibleCerts[index] ? (
+                          <ChevronUp size={14} className="ml-1" />
+                        ) : (
+                          <ChevronDown size={14} className="ml-1" />
+                        )}
+                      </button>
+                    </li>
+                  ))}
+
+                  {/* Display certificate images if visible */}
+                  {certificates.map((cert, index) =>
+                    visibleCerts[index] ? (
+                      <div key={index} className="mt-2">
+                        <Image
+                          src={cert.image}
+                          alt={cert.name}
+                          width={600}
+                          height={400}
+                          className="rounded-lg border border-gray-300 shadow-md"
+                        />
+                      </div>
+                    ) : null
+                  )}
+                </ul>
+              </div>
+            </div>
           </div>
-          
+
           <div className="md:w-1/2 md:pl-8">
             <Image
               src={MarkDuraidpic}
               alt="Mark Duraid Logo"
-              className="h-8 mr-3"
-              layout="intrinsic"
+              width={500}
+              height={500}
+              className="rounded-lg"
             />
           </div>
         </div>
