@@ -3,17 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react"; // Import icons
-import MarkDuraidpic from "../../public/images/MarkDuraid.png";
-import SecurityPlus from "../../public/images/SecurityPlus.png";
-import MicrosoftSecurity from "../../public/images/SecurityFundamentals.png";
-import CyberAwareness from "../../public/images/cyberawareness.png";
-import NREIP from "../../public/images/NreipCert.png";
 
 const certificates = [
-  { name: "CompTIA Security+ March 2025", image: SecurityPlus },
-  { name: "Microsoft Security Fundamentals March 2025", image: MicrosoftSecurity },
-  { name: "Cyber Awareness Challenge July 2024", image: CyberAwareness },
-  { name: "NREIP Completion August 2023", image: NREIP },
+  { name: "CompTIA Security+ March 2025", image: "/images/SecurityPlus.PNG" },
+  { name: "Microsoft Security Fundamentals March 2025", image: "/images/SecurityFundamentals.PNG" },
+  { name: "Cyber Awareness Challenge July 2024", image: "/images/cyberawareness.PNG" },
+  { name: "NREIP Completion August 2023", image: "/images/NreipCert.PNG" },
 ];
 
 export default function Home() {
@@ -64,11 +59,10 @@ export default function Home() {
                 <h2 className="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-100">
                   Certifications
                 </h2>
-                <ul className="mt-2 space-y-2"> {/* Reduced spacing */}
+                <ul className="mt-2 space-y-2"> 
                   <li className="flex items-center">
                     <p>❖ CompTIA Network+ (In-Progress)</p>
                   </li>
-
                   {certificates.map((cert, index) => (
                     <li key={index} className="flex items-center">
                       <p>❖ {cert.name}</p>
@@ -85,8 +79,6 @@ export default function Home() {
                       </button>
                     </li>
                   ))}
-
-                  {/* Display certificate images if visible */}
                   {certificates.map((cert, index) =>
                     visibleCerts[index] ? (
                       <div key={index} className="mt-2">
@@ -107,7 +99,7 @@ export default function Home() {
 
           <div className="md:w-1/2 md:pl-8">
             <Image
-              src={MarkDuraidpic}
+              src="/images/MarkDuraid.png"
               alt="Mark Duraid Logo"
               width={500}
               height={500}
