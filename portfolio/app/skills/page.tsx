@@ -6,6 +6,7 @@ import { ChevronDown, ChevronUp } from "lucide-react"; // Import icons
 
 const certificates = [
   { name: "CompTIA Security+ March 2025", image: "/images/SecurityPlus.PNG" },
+  { name: "CompTIA Linux+ March 2025", image: "/images/LinuxPlus.PNG" },
   { name: "Microsoft Security Fundamentals March 2025", image: "/images/SecurityFundamentals.PNG" },
   { name: "Cyber Awareness Challenge July 2024", image: "/images/cyberawareness.PNG" },
   { name: "NREIP Completion August 2023", image: "/images/NreipCert.PNG" },
@@ -60,9 +61,6 @@ export default function Home() {
                   Certifications
                 </h2>
                 <ul className="mt-2 space-y-2"> 
-                  <li className="flex items-center">
-                    <p>❖ CompTIA Network+ (In-Progress)</p>
-                  </li>
                   {certificates.map((cert, index) => (
                     <li key={index} className="flex items-center">
                       <p>❖ {cert.name}</p>
