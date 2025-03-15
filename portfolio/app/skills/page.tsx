@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronDown, ChevronUp } from "lucide-react"; // Import icons
+import { ChevronDown, ChevronUp } from "lucide-react"; 
 
 const certificates = [
   { name: "CompTIA Security+ March 2025", image: "/images/SecurityPlus.PNG" },
@@ -79,13 +79,14 @@ export default function Home() {
                   ))}
                   {certificates.map((cert, index) =>
                     visibleCerts[index] ? (
-                      <div key={index} className="mt-2">
+                      <div key={index} className="mt-4 p-6 border-8 border-yellow-600 rounded-lg shadow-xl bg-white max-w-lg mx-auto relative">
+                        <div className="absolute inset-0 border-4 border-yellow-400 rounded-lg m-2"></div>
                         <Image
                           src={cert.image}
                           alt={cert.name}
                           width={600}
                           height={400}
-                          className="rounded-lg border border-gray-300 shadow-md"
+                          className="rounded-lg border-2 border-gray-500"
                         />
                       </div>
                     ) : null
