@@ -13,11 +13,11 @@ const certificates = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundImage: "url('/images/6191107.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="min-h-screen flex flex-col bg-top md:bg-center" style={{ backgroundImage: "url('/images/6191107.jpg')", backgroundSize: 'cover' }}>
       <main className="flex items-center justify-center mt-16 py-16 pt-12">
         <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8">
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white pt-20 sm:pt-16 md:pt-0 md:text-5xl lg:text-6xl">
               <span>My </span><span className="text-yellow-500">Skills</span>
             </h1>
             <div className="text-sm font-normal text-white lg:text-sm dark:text-gray-400 space-y-4">
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
           </div>
           <div className="md:w-1/2 md:pl-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-28 sm:pb-16 md:pb-0">
               {certificates.map((cert, index) => (
                 <div
                   key={index}

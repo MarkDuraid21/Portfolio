@@ -5,10 +5,10 @@ import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 export default function Home() {
   return (
     <div className="bg-custom min-h-screen"> {/* Added min-h-screen */}
-      <main className="flex items-center justify-center py-16 pt-12"> {/* Removed mt-16 */}
+      <main className="flex items-center justify-center py-16 pt-12 pb-20 sm:pb-16 md:pb-0"> {/* Removed mt-16 */}
         <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8">
-            <p className="text-lg font-bold text-white">— Hello</p>
+          <p className="text-lg font-bold text-white pt-20 sm:pt-16 md:pt-0">— Hello</p>
             <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
               I'm <span className="text-yellow-500">Mark</span> Duraid
             </h1>

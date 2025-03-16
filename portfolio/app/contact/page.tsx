@@ -5,17 +5,15 @@ export default function Home() {
   return (
     <div className="bg-custom min-h-screen w-full">
       
-      {/* Navigation Bar Fix - Remove Any Unnecessary Margins/Padding */}
+
       <main className="flex items-center justify-center py-16 pt-8">  
         <div className="text-left max-w-screen-xl px-8 sm:px-12 md:px-16 flex flex-col md:flex-row items-center">
           
-          {/* Left Section - Contact Form */}
           <div className="md:w-1/2 md:pr-8">
             <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
               Contact <span className="text-yellow-500">Me</span>
             </h1>
             
-            {/* Google Form */}
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSdox06f0kpFqg9vrMU3-K2vg03rFQDRel0Ev3bZ8JamRxa5QQ/viewform?embedded=true"
               width="100%"  
@@ -28,7 +26,6 @@ export default function Home() {
             </iframe>
           </div>
 
-          {/* Right Section - Image */}
           <div className="md:w-1/2 md:pl-8 flex justify-center">
             <Image
               src={MarkDuraidpic}

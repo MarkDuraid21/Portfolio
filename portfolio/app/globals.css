@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add your custom styles below */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 h1, h2, h3, h4, h5, h6 {
   color: #343a40;
@@ -17,6 +21,14 @@ a {
 a:hover {
   color: #0056b3;
   text-decoration: underline;
+}
+
+.text-gold {
+  color: #FFD700; 
+}
+
+a:hover.text-gold {
+  color: #FFD700 !important; 
 }
 
 button {
@@ -39,55 +51,62 @@ button:hover {
 }
 
 nav {
-  background-color: #0a0a0a; /* Darker black for navbar */
+  background-color: #0a0a0a; 
 }
 
 footer {
-  background-color: #000000; /* Dark black background */
+  background-color: #000000;
   color: white;
+  margin-top: 0;
+  padding-top: 0;
+  position: relative;
+  z-index: 2; 
+}
+
+.bg-custom, .bg-custom-experience, .fixed-background {
+  background-image: url('/images/6191107.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.bg-custom {
+  background-position: top center; 
+  min-height: 100vh;
+}
+
+.bg-custom-experience {
+  background-position: center -50px;
+  min-height: calc(100vh + 100px); 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.fixed-background {
+  background-attachment: fixed;
+  background-position: center;
+}
+
+main {
+  flex-grow: 1;
+}
+@media (max-width: 768px) { 
+  .bg-custom-experience {
+    background-position: center -100px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-custom-experience {
+    background-position: center -150px; 
+  }
 }
 
 .text-gold {
-  color: #FFD700; /* Gold color */
-}
-
-a:hover.text-gold {
-  color: #FFD700; /* Ensure hover color is also gold */
+  color: #FFD700 !important;
 }
 
 a:hover {
-  color: gold !important;
+  color: #FFD700 !important;
 }
-
-.text-gold {
-    color: #FFD700;
-  }
-
-  
-
-
-
-  .bg-custom {
-    background-image: url('../public/images/6191107.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 100vh; /* Ensure it covers the full viewport height */
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
-  }
-
-  /* styles.css */
-.fixed-background {
-    background-image: url('/images/6191107.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  

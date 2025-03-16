@@ -6,10 +6,10 @@ import GrossmontImage from '../../public/images/GrossmontL.png';
 export default function Home() {
   return (
     <div className="bg-custom min-h-screen w-full">
-      <main className="flex items-center justify-center min-h-screen">
+      <main className="flex items-center justify-center min-h-screen pb-20 sm:pb-16 md:pb-0">
         <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8">
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl pt-20 sm:pt-16 md:pt-0">
               My <span className="text-yellow-500">Education</span>
             </h1>
             {renderEducation(

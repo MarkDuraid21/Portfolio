@@ -3,8 +3,8 @@ import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
 
 export default function Home() { 
   return (
-    <div className="bg-custom min-h-screen w-full">
-      <main className="flex items-center justify-center py-16">
+    <div className="bg-custom-experience min-h-screen w-full flex flex-col">
+      <main className="flex-grow flex items-center justify-center py-16 pb-0">
         <div className="text-left max-w-screen-xl px-8 sm:px-12 md:px-16 flex flex-col md:flex-row items-center">
           {/* Left Section - Experience */}
           <div className="md:w-1/2 md:pr-8 max-w-3xl mx-auto">
@@ -44,22 +44,29 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Footer is automatically pushed to bottom */}
     </div>
   );
 }
 
+
 function renderExperience(title: string, role: string, description: string) {
   return (
     <div className="mb-6">
-      <h2 className="text-md font-bold text-white lg:text-md" style={{ lineHeight: '2' }}>
-        {title}
-      </h2>
-      <p className="mb-2 text-sm font-italic text-yellow-500" style={{ lineHeight: '2' }}>
+      <div className="flex items-center">
+        <h2 className="text-md font-bold text-white lg:text-md no-underline" style={{ lineHeight: '1.5' }}>
+          {title}
+        </h2>
+      </div>
+      <p className="mb-2 text-sm italic text-yellow-500" style={{ lineHeight: '1.8' }}>
         {role}
       </p>
-      <p className="mb-2 text-sm font-italic text-white" style={{ lineHeight: '2' }}>
-        {description}
-      </p>
+      {description && (
+        <p className="mb-2 text-sm text-white" style={{ lineHeight: '1.8' }}>
+          {description}
+        </p>
+      )}
     </div>
   );
 }

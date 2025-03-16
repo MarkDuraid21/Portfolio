@@ -4,7 +4,7 @@ import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
 export default function Home() { 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundImage: "url('/images/6191107.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <main className="flex-grow flex items-center justify-center mt-16 py-16 pt-12">
+      <main className="flex-grow flex items-center justify-center mt-16 py-16 pt-12 pb-20 sm:pb-16 md:pb-0">
         <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8">
             <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
