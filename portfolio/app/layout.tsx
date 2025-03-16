@@ -17,15 +17,13 @@ const RootLayout = ({
   children: React.ReactNode
 }) => {
   const backgroundStyle: React.CSSProperties = {
-    backgroundImage: `url('/images/Background.jpg')`, // Adjust the path according to your project structure
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundColor: '#333333', // Light black background
   }
 
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-white flex flex-col min-h-screen`}
+        className={`${inter.className} flex flex-col min-h-screen`}
         style={backgroundStyle}
       >
         <Navbar />

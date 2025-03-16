@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { ChevronDown, ChevronUp } from "lucide-react"; 
+import classNames from 'classnames';
 
 const certificates = [
   { name: "CompTIA Security+ March 2025", image: "/images/SecurityPlus.PNG" },
@@ -13,24 +12,18 @@ const certificates = [
 ];
 
 export default function Home() {
-  const [visibleCerts, setVisibleCerts] = useState<{ [key: number]: boolean }>({});
-
-  const toggleCertificate = (index: number) => {
-    setVisibleCerts((prev) => ({ ...prev, [index]: !prev[index] }));
-  };
-
   return (
-    <div>
+    <div className="min-h-screen flex flex-col" style={{ backgroundImage: "url('/images/6191107.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <main className="flex items-center justify-center mt-16 py-16 pt-12">
         <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8">
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-              <span>My </span><span className="text-red-600">Skills</span>
+            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+              <span>My </span><span className="text-yellow-500">Skills</span>
             </h1>
-            <div className="text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400 space-y-4">
+            <div className="text-sm font-normal text-white lg:text-sm dark:text-gray-400 space-y-4">
               <div>
-                <h2 className="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-100">
-                  Technical <span className="text-red-600">Skills</span>
+                <h2 className="mb-2 text-xl font-extrabold text-white dark:text-gray-100">
+                  Technical <span className="text-yellow-500">Skills</span>
                 </h2>
                 <ul className="space-y-1">
                   <li>❖ <strong>Programming Languages:</strong> Python, JavaScript, HTML, CSS, C++, Java, GO</li>
@@ -45,9 +38,8 @@ export default function Home() {
                   <li>❖ <strong>Professional Skills:</strong> Time management, Communication, Cross-functional Collaboration, Quick learning</li>
                 </ul>
               </div>
-
               <div>
-                <h2 className="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-100">
+                <h2 className="mb-2 text-xl font-extrabold text-white dark:text-gray-100">
                   Languages
                 </h2>
                 <ul className="space-y-1">
@@ -55,55 +47,40 @@ export default function Home() {
                   <li>❖ Arabic</li>
                 </ul>
               </div>
-
               <div>
-                <h2 className="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-100">
-                  Certifications
+                <h2 className="mb-2 text-xl font-extrabold text-white dark:text-gray-100">
+                  Certificates
                 </h2>
-                <ul className="mt-2 space-y-2"> 
+                <ul className="space-y-1">
                   {certificates.map((cert, index) => (
-                    <li key={index} className="flex items-center">
-                      <p>❖ {cert.name}</p>
-                      <button
-                        onClick={() => toggleCertificate(index)}
-                        className="ml-2 border border-black text-black px-2 py-0.5 text-xs font-semibold rounded flex items-center hover:bg-gray-100 transition-all"
-                      >
-                        {visibleCerts[index] ? "Hide Credential" : "Show Credential"}
-                        {visibleCerts[index] ? (
-                          <ChevronUp size={14} className="ml-1" />
-                        ) : (
-                          <ChevronDown size={14} className="ml-1" />
-                        )}
-                      </button>
-                    </li>
+                    <li key={index}>❖ {cert.name}</li>
                   ))}
-                  {certificates.map((cert, index) =>
-                    visibleCerts[index] ? (
-                      <div key={index} className="mt-4 p-6 border-8 border-yellow-600 rounded-lg shadow-xl bg-white max-w-lg mx-auto relative">
-                        <div className="absolute inset-0 border-4 border-yellow-400 rounded-lg m-2"></div>
-                        <Image
-                          src={cert.image}
-                          alt={cert.name}
-                          width={600}
-                          height={400}
-                          className="rounded-lg border-2 border-gray-500"
-                        />
-                      </div>
-                    ) : null
-                  )}
                 </ul>
               </div>
             </div>
           </div>
-
           <div className="md:w-1/2 md:pl-8">
-            <Image
-              src="/images/MarkDuraid.png"
-              alt="Mark Duraid Logo"
-              width={500}
-              height={500}
-              className="rounded-lg"
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {certificates.map((cert, index) => (
+                <div
+                  key={index}
+                  className={classNames("mb-4 rounded-lg border-2 border-yellow-500", {
+                    "m-0": cert.name !== "Cyber Awareness Challenge July 2024",
+                    "m-0 mb-2": cert.name === "Cyber Awareness Challenge July 2024"
+                  })}
+                >
+                  <Image
+                    src={cert.image}
+                    alt={cert.name}
+                    width={300}
+                    height={200}
+                    layout="intrinsic"
+                    className="rounded-lg"
+                    objectFit="cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </main>

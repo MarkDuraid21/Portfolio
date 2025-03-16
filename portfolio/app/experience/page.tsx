@@ -1,81 +1,65 @@
-import Image from "next/legacy/image"
-import MarkDuraidpic from '../../public/images/MarkDuraid.png'
+import Image from "next/legacy/image";
+import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
 
 export default function Home() { 
-
   return (
-    <div>
-      <main className="flex items-center justify-center mt-16 py-16 pt-12">
-        <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 md:pr-8">
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-              My <span className="text-red-600">Experience</span>
+    <div className="bg-custom min-h-screen w-full">
+      <main className="flex items-center justify-center py-16">
+        <div className="text-left max-w-screen-xl px-8 sm:px-12 md:px-16 flex flex-col md:flex-row items-center">
+          {/* Left Section - Experience */}
+          <div className="md:w-1/2 md:pr-8 max-w-3xl mx-auto">
+            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+              My <span className="text-yellow-500">Experience</span>
             </h1>
             {renderExperience(
               'Naval Information Warfare Center Pacific',
-              'Security Analyst/System Administrator | July 2024 - Present',
-              'Conducted advanced vulnerability assessments using ACAS (Assured Compliance Assessment Solution) to identify and mitigate security risks within enterprise systems. Executed Security Technical Implementation Guides (STIGs) on a windows server, ensuring compliance with DoD cybersecurity standards and enhancing system security postures Collaborated with cross-functional teams to prioritize and remediate vulnerabilities identified during ACAS scans, improving overall system resilience. Analyze scan results and report vulnerabilities to safeguard against potential exploits and unauthorized access.'
+              'Computer Scientist | July 2024 - Present',
+              ''
             )}
             {renderExperience(
               'Naval Information Warfare Center Pacific',
               'Security Automation Engineer Intern | January 2024 - March 2024',
-              'Utilized GO to categorize and implement various Security Technical Implementation Guide (STIG) benchmarks, enhancing the overall security posture of target systems. Enhanced CyberKnight software by incorporating the Cybersecurity Vulnerability Analysis (CVA) process. Developed a custom application taking in ‘Stig’ objects, facilitating the comparison of vulnerability statuses. Automated routine tasks within the CyberKnight project, showcasing proficiency in security automation and the ability to optimize processes for increased efficiency. Facilitated regular coordination by participating in bi-weekly meetings with the project manager, security team, and developers. These sessions were instrumental in fostering effective communication, aligning poet goals, and addressing security considerations within the development process. Contributed to the evaluation of new security tools and technologies, staying informed about advancements in the field and recommending improvements to the existing security infrastructure.'
+              'Utilized GO to categorize and implement various Security Technical Implementation Guide (STIG) benchmarks, enhancing the overall security posture of target systems. Enhanced CyberKnight software by incorporating the Cybersecurity Vulnerability Analysis (CVA) process. Developed a custom application taking in STIG objects, facilitating the comparison of vulnerability statuses. Automated routine tasks within the CyberKnight project, optimizing processes for increased efficiency. Coordinated bi-weekly meetings with the project manager, security team, and developers to ensure alignment with security objectives.'
             )}
             {renderExperience(
               'Naval Information Warfare Center Pacific',
               'Machine Learning Engineer NREIP Intern | October 2023 - December 2023',
-              'Spearheaded the development of a multi-tiered NLP (Natural Language Processing) application employing HTML, JavaScript, and Python with Node.js, leveraging trunk-based development methodologies. Orchestrated agile development framework, conducting bi-weekly meetings to discuss updates, solicit feedback, and ensure alignment with project objectives. Engineered an information extraction system utilizing Python for data scraping from diverse file formats (PDF, DOCX, XLSX), demonstrating adeptness in data parsing and extraction. Demonstrated expertise in integrating disparate technologies to deliver a cohesive solution, where Python served the scraping function while HTML and JavaScript were instrumental in a user friendly interface.'
+              'Developed a multi-tiered NLP (Natural Language Processing) application using HTML, JavaScript, and Python with Node.js, leveraging trunk-based development methodologies. Implemented an information extraction system utilizing Python for data scraping from diverse file formats (PDF, DOCX, XLSX), demonstrating expertise in data parsing and automation. Conducted bi-weekly meetings to provide project updates and align with team objectives.'
             )}
             {renderExperience(
               'Naval Information Warfare Center Pacific',
               'Security Software Engineer Intern | June 2023 — August 2023',
-              'Worked as a Full Stack Developer to create a specialized tool utilizing RMF (Risk Management Framework) for the Navy, streamlining the process of managing and assessing cybersecurity risks for critical systems. Gained valuable experience in Agile Development methodologies, ensuring efficient and collaborative project management. Demonstrated proficiency in Trunk Based Development, promoting continuous integration and streamlined codebase maintenance. Collaborated effectively with a team to successfully deliver a project using RMF Step 2. Led daily standups/meetings, fostering clear communication and coordination among team members. Participated in the creation of wireframes, providing a visual blueprint for the project before commencing development. Followed set designs to maintain consistency in UI/UX and deliver a user-friendly application. Conducted regular user interviews. Gathering insights and feedback to shape the app’s design and functionality based on user preferences.'
+              'Developed a specialized tool using RMF (Risk Management Framework) for the Navy, streamlining cybersecurity risk assessments. Applied Agile Development methodologies and Trunk-Based Development for efficient code integration. Led daily standups, facilitated user interviews, and created wireframes to ensure a user-friendly application experience.'
             )}
-            {renderExperience(
-              'Grossmont-Cuyamaca Community College District',
-              'Financial Aid Student Ambassador | August 2021 — May 2024',
-              'I\'ve guided students through the FAFSA application process by providing personalized one-on-one assistance, offering translations, and leveraging financial aid software to keep them informed about their file statuses. Additionally, I\'ve organized educational events to clarify financial aid concepts. Furthermore, I\'ve contributed to team success by training new members in documentation practices and \'SAM\' financial aid system, fostering effective teamwork.'
-            )}
-
-            <div className="mt-6 ml-1">
-              {' '}
-              {/* Increased margin-top and adjusted margin-left */}
-            </div>
           </div>
-          <div className="md:w-1/2 md:pl-8">
+
+          {/* Right Section - Image */}
+          <div className="md:w-1/2 md:pl-8 flex justify-center">
             <Image
               src={MarkDuraidpic}
-              alt="Mark Duraid Logo"
-              className="h-8 mr-3"
+              alt="Mark Duraid"
+              className="rounded-lg shadow-lg"
               layout="intrinsic"
             />
           </div>
         </div>
       </main>
     </div>
-  )
+  );
 }
+
 function renderExperience(title: string, role: string, description: string) {
   return (
-    <>
-      <h2
-        className="text-md font-bold text-gray-900 lg:text-md"
-        style={{ lineHeight: '2' }}
-      >
+    <div className="mb-6">
+      <h2 className="text-md font-bold text-white lg:text-md" style={{ lineHeight: '2' }}>
         {title}
       </h2>
-      <p
-        className="mb-2 text-sm font-italic text-gray-500"
-        style={{ lineHeight: '2' }}
-      >
+      <p className="mb-2 text-sm font-italic text-yellow-500" style={{ lineHeight: '2' }}>
         {role}
       </p>
-      <p
-        className="mb-2 text-sm font-italic text-gray-900"
-        style={{ lineHeight: '2' }}
-      >
+      <p className="mb-2 text-sm font-italic text-white" style={{ lineHeight: '2' }}>
         {description}
       </p>
-    </>
-  )
+    </div>
+  );
 }

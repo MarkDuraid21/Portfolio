@@ -14,9 +14,9 @@ export default function Home() {
       <main className="flex items-center justify-center mt-16 py-16 pt-12">
         <div className="text-left max-w-screen-xl px-4 sm:px-8 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8">
-            <p>— Hello</p>
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-              I'm <span className="text-red-600">Mark</span> Duraid
+            <p className="text-white">— Hello</p>
+            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+              I'm <span className="text-gold">Mark</span> Duraid
             </h1>
             <p
               className="mb-6 text-sm font-normal text-gray-500 lg:text-sm dark:text-gray-400"
@@ -27,7 +27,7 @@ export default function Home() {
             <a
               href="/path-to-your-resume.pdf"
               download
-              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
+              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-gold rounded-lg hover:bg-gold-dark focus:ring-4 focus:ring-gold-light dark:focus:ring-gold-dark"
             >
               Download Resume
               <svg
