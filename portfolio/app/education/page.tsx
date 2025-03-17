@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
+import MarkDuraidpic from '../../public/images/sdsuemblembg.png';
 import SDSUImage from '../../public/images/SDSULogo.png';
 import GrossmontImage from '../../public/images/GrossmontL.png';
 
