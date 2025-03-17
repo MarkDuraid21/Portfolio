@@ -6,6 +6,7 @@ import classNames from 'classnames';
 const certificates = [
   { name: "CompTIA Security+ March 2025", image: "/images/SecurityPlus.PNG" },
   { name: "CompTIA Linux+ March 2025", image: "/images/LinuxPlus.PNG" },
+  { name: "Red Hat System Administration I (RH124) March 2025", image: "/images/RedHatSysAdmin.PNG" },
   { name: "Microsoft Security Fundamentals March 2025", image: "/images/SecurityFundamentals.PNG" },
   { name: "Cyber Awareness Challenge July 2024", image: "/images/cyberawareness.PNG" },
   { name: "NREIP Completion August 2023", image: "/images/NreipCert.PNG" },
