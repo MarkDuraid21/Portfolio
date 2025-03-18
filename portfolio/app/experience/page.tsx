@@ -40,7 +40,7 @@ export default function Home() {
               alt="Mark Duraid"
               className="rounded-lg shadow-lg"
               layout="intrinsic"
-              width={300}
+              width={400}
               height={400}
             />
           </div>
