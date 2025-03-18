@@ -1,5 +1,5 @@
 import Image from "next/legacy/image";
-import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
+import MarkDuraidpic from '../../public/images/niwcpactp.png';
 
 export default function Home() { 
   return (
@@ -40,6 +40,8 @@ export default function Home() {
               alt="Mark Duraid"
               className="rounded-lg shadow-lg"
               layout="intrinsic"
+              width={300}
+              height={400}
             />
           </div>
         </div>
