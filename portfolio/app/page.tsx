@@ -1,5 +1,5 @@
 import Image from "next/legacy/image";
-import MarkDuraidpic from '../public/images/niwcpactp.png';
+import MarkDuraidpic from '../public/images/MD13bgRemoved.png';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Home() {
