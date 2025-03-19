@@ -11,6 +11,8 @@ export default function Home() {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,17 +24,30 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
+
+    const currentTime = new Date().toLocaleString();
+
+    const dataToSend = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      time: currentTime
+    };
 
     emailjs.send(
       'service_4ksmqbu', 
       'template_zhi8et3', 
-      formData,
+      dataToSend,
       'DHLvfygrR-zd1e8dX' 
     ).then((result) => {
       console.log(result.text);
-      alert('Message sent successfully!');
+      setIsLoading(false);
+      setIsSuccess(true);
+      setTimeout(() => setIsSuccess(false), 3000); // Hide success message after 3 seconds
     }, (error) => {
       console.log(error.text);
+      setIsLoading(false);
       alert('Failed to send message, please try again.');
     });
 
@@ -96,6 +111,16 @@ export default function Home() {
                 </button>
               </div>
             </form>
+            {isLoading && (
+              <div className="mt-4 text-white">
+                <div className="loader">Loading...</div>
+              </div>
+            )}
+            {isSuccess && (
+              <div className="mt-4 text-green-500">
+                <div className="checkmark">✔ Message sent successfully!</div>
+              </div>
+            )}
           </div>
           <div className="md:w-1/2 md:pl-8 flex justify-center">
             <Image
