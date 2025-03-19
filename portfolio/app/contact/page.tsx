@@ -7,7 +7,7 @@ import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
 
 export default function Home() {
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     message: ''
   });
@@ -24,10 +24,10 @@ export default function Home() {
     e.preventDefault();
 
     emailjs.send(
-      'service_4ksmqbu', // Replace with your EmailJS service ID
-      'template_zhi8et3', // Replace with your EmailJS template ID
+      'service_4ksmqbu', 
+      'template_zhi8et3', 
       formData,
-      'DHLvfygrR-zd1e8dX' // Replace with your EmailJS user ID (Public Key)
+      'DHLvfygrR-zd1e8dX' 
     ).then((result) => {
       console.log(result.text);
       alert('Message sent successfully!');
@@ -37,7 +37,7 @@ export default function Home() {
     });
 
     setFormData({
-      fullName: '',
+      name: '',
       email: '',
       message: ''
     });
@@ -53,12 +53,12 @@ export default function Home() {
             </h1>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-white">Full Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-white">Full Name</label>
                 <input
                   type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
+                  id="name"
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
                   className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:text-sm"
