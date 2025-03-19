@@ -67,60 +67,66 @@ export default function Home() {
               Contact <span className="text-yellow-500">Me</span>
             </h1>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-white">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:text-sm"
-                />
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
-            {isLoading && (
-              <div className="mt-4 text-white">
-                <div className="loader">Loading...</div>
-              </div>
-            )}
-            {isSuccess && (
-              <div className="mt-4 text-green-500">
-                <div className="checkmark">✔ Message sent successfully!</div>
-              </div>
-            )}
+  <div>
+    <label htmlFor="name" className="block text-sm font-medium text-white">
+      Full Name <span className="text-yellow-500">*</span>
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      required
+      className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:text-sm"
+    />
+  </div>
+  <div>
+    <label htmlFor="email" className="block text-sm font-medium text-white">
+      Email <span className="text-yellow-500">*</span>
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      required
+      className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:text-sm"
+    />
+  </div>
+  <div>
+    <label htmlFor="message" className="block text-sm font-medium text-white">
+      Message <span className="text-yellow-500">*</span>
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      required
+      className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:text-sm"
+    />
+  </div>
+  <div>
+    <button
+      type="submit"
+      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+    >
+      Send Message
+    </button>
+  </div>
+</form>
+{isLoading && (
+  <div className="mt-4 text-white">
+    <div className="loader">Loading...</div>
+  </div>
+)}
+{isSuccess && (
+  <div className="mt-4 text-green-500">
+    <div className="checkmark">✔ Message sent successfully!</div>
+  </div>
+)}
           </div>
           <div className="md:w-1/2 md:pl-8 flex justify-center">
             <Image
