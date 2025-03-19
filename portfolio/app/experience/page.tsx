@@ -1,12 +1,13 @@
 import Image from "next/legacy/image";
 import MarkDuraidpic from '../../public/images/niwcpactp.png';
+import GoldCircuit from '../../public/images/goldcircuit.png';
 
 export default function Home() { 
   return (
-    <div className="bg-custom-experience min-h-screen w-full flex flex-col">
-      <main className="flex-grow flex items-center justify-center py-16 pb-0">
-        <div className="text-left max-w-screen-xl px-8 sm:px-12 md:px-16 flex flex-col md:flex-row items-center">
-          {/* Left Section - Experience */}
+    <div className="bg-custom-experience min-h-screen flex flex-col justify-between">
+      <main className="flex-grow flex items-center justify-center py-16 pb-16">
+        <div className="text-left max-w-screen-xl px-8 sm:px-12 md:px-16 flex flex-col md:flex-row items-center w-full">
+    
           <div className="md:w-1/2 md:pr-8 max-w-3xl mx-auto">
             <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
               My <span className="text-yellow-500">Experience</span>
@@ -33,25 +34,34 @@ export default function Home() {
             )}
           </div>
 
-          {/* Right Section - Image */}
-          <div className="md:w-1/2 md:pl-8 flex justify-center">
-            <Image
-              src={MarkDuraidpic}
-              alt="Mark Duraid"
-              className="rounded-lg shadow-lg"
-              layout="intrinsic"
-              width={400}
-              height={400}
-            />
+          <div className="md:w-1/2 md:pl-8 flex flex-col items-center">
+            <div className="mb-20"> 
+              <Image
+                src={MarkDuraidpic}
+                alt="Mark Duraid"
+                className="rounded-lg shadow-lg"
+                layout="intrinsic"
+                width={300}
+                height={300}
+              />
+            </div>
+            <div>
+              <Image
+                src={GoldCircuit}
+                alt="Gold Circuit Design"
+                className="rounded-lg shadow-lg"
+                layout="intrinsic"
+                width={300}
+                height={200}
+              />
+            </div>
           </div>
+
         </div>
       </main>
-
-      {/* Footer is automatically pushed to bottom */}
     </div>
   );
 }
-
 
 function renderExperience(title: string, role: string, description: string) {
   return (
