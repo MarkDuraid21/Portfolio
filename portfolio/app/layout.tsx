@@ -17,7 +17,7 @@ const RootLayout = ({
   children: React.ReactNode
 }) => {
   const backgroundStyle: React.CSSProperties = {
-    backgroundColor: '#333333', // Light black background
+    backgroundColor: '#1a1a1a', 
   }
 
   return (
