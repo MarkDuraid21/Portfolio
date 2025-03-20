@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Navbar() {
   const currentRoute = usePathname();
@@ -11,10 +12,17 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full z-20 left-0 py-4 bg-black">
+    <nav className="w-full z-20 left-0 py-2 bg-black">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <a href="/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold text-yellow-500 space-nowrap">
+        <a href="/" className="flex items-center space-x-3">
+          <Image
+            src="/images/MDLogo.jpeg" // Adjust the path if needed
+            alt="MD Logo"
+            width={140} // Adjust size as needed
+            height={140}
+            className="h-8 w-8"
+          />
+          <span className="self-center text-2xl font-light text-[#C9A46A] whitespace-nowrap">
             Mark Duraid
           </span>
         </a>
