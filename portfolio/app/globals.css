@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
@@ -19,94 +18,91 @@ a {
 }
 
 a:hover {
-  color: #0056b3;
+  color: #FFD700 !important;
   text-decoration: underline;
 }
 
 .text-gold {
-  color: #FFD700; 
-}
-
-a:hover.text-gold {
-  color: #FFD700 !important; 
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-nav {
-  background-color: #0a0a0a; 
-}
-
-footer {
-  background-color: #000000;
-  color: white;
-  margin-top: 0;
-  padding-top: 0;
-  position: relative;
-  z-index: 2; 
-}
-
-.bg-custom, .bg-custom-experience, .fixed-background {
-  background-image: url('/images/6191107.jpg'); 
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-}
-
-.bg-custom {
-  background-position: top center; 
-  min-height: 100vh;
-}
-
-.bg-custom-experience {
-  background-position: center -50px;
-  min-height: calc(100vh + 100px); 
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.fixed-background {
-  background-attachment: fixed;
-  background-position: center;
-}
-
-main {
-  flex-grow: 1;
-}
-@media (max-width: 768px) { 
-  .bg-custom-experience {
-    background-position: center -100px; 
-  }
-}
-
-@media (max-width: 480px) {
-  .bg-custom-experience {
-    background-position: center -150px; 
-  }
-}
-
-.text-gold {
   color: #FFD700 !important;
 }
 
-a:hover {
-  color: #FFD700 !important;
+
+.chatbox {
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+}
+
+.user-message {
+  background-color: #FFD700 !important;
+  color: white !important;
+}
+
+.chatbot-message {
+  background-color: #2a2a2a !important;
+  color: white !important;
+}
+.chatbox input[type="text"] {
+  background: #333333 !important; 
+  color: white !important; 
+  border: 1px solid #FFD700; 
+  padding: 10px; 
+  font-size: 16px; 
+}
+
+button.close-btn {
+  font-size: 1.25rem; 
+  color: #fbbf24; 
+  transition: color 0.2s ease-in-out;
+}
+
+button.close-btn:hover {
+  color: white; 
+}
+
+.chatbot-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #000000; 
+  color: #FFFFFF; 
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px; 
+  border: 2px solid #FFD700; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.chatbot-btn:hover {
+  background-color: #FFD700; 
+  color: #000000; 
+}
+
+
+button[type="submit"] {
+  background-color: #fbbf24; 
+  border: 2px solid #fbbf24; 
+  color: #ffffff; 
+  font-size: 0.875rem; 
+  padding: 8px 20px; 
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #FFD700; 
+  color: #000000;
+}
+
+input[type="text"], input[type="email"], textarea {
+  background-color: #ffffff !important; 
+  color: #000000; 
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: 2px solid #FFD700 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #7a7a7a;
 }

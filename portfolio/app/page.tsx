@@ -1,6 +1,7 @@
 import Image from "next/legacy/image";
 import MarkDuraidpic from "../public/images/MD13bgRemoved.png";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Chatbot from "./components/Chatbot"; 
 
 export default function Home() {
   return (
@@ -93,6 +94,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Chatbot />
     </div>
   );
 }
