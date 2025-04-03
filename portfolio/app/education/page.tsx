@@ -2,6 +2,7 @@ import Image from "next/image";
 import MarkDuraidpic from "../../public/images/sdsuemblembg.png";
 import SDSUImage from "../../public/images/SDSULogo.png";
 import GrossmontImage from "../../public/images/GrossmontL.png";
+import Chatbot from '../components/Chatbot';
 
 export default function Home() {
   return (
@@ -85,6 +86,7 @@ function renderEducation(school: string, details: string) {
       <p className="mb-2 text-sm font-italic text-yellow-500" style={{ lineHeight: "2", marginTop: "-0.25rem" }}>
         {details}
       </p>
+      <Chatbot />
     </>
   );
 }

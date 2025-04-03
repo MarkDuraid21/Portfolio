@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import Image from "next/legacy/image";
 import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
+import Chatbot from '../components/Chatbot'; // Import the Chatbot component
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -130,6 +131,9 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Include the Chatbot */}
+      <Chatbot />
     </div>
   );
 }

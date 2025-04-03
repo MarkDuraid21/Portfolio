@@ -1,7 +1,8 @@
 import Image from "next/legacy/image";
 import MarkDuraidpic from '../../public/images/MD13bgRemoved.png';
+import Chatbot from '../components/Chatbot'; 
 
-export default function Home() { 
+export default function About() { 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundImage: "url('/images/6191107.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <main className="flex-grow flex items-center justify-center mt-16 py-16 pt-12 pb-20 sm:pb-16 md:pb-0">
@@ -18,7 +19,7 @@ export default function Home() {
             </p>
 
             <div className="mt-6 ml-1">
-              {' '}
+              {/* Add other About Section content here */}
             </div>
           </div>
           <div className="md:w-1/2 md:pl-8">
@@ -31,6 +32,9 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Include the Chatbot */}
+      <Chatbot />
     </div>
-  )
+  );
 }

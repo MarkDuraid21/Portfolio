@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/legacy/image";
 import MarkDuraidpic from "../../public/images/niwcpactp.png";
 import GoldCircuit from "../../public/images/goldcircuit.png";
+import Chatbot from '../components/Chatbot'; 
 
 export default function Home() {
   return (
@@ -65,6 +66,9 @@ export default function Home() {
           </div>
         </div>
       </main>
+      
+      {/* Add the Chatbot component here */}
+      <Chatbot />  {/* This will render the chatbot at the bottom of the page */}
     </div>
   );
 }
