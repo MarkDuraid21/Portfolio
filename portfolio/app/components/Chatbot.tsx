@@ -27,6 +27,46 @@ export default function Chatbot() {
   };
 
   const getBotResponse = (userInput: string) => {
+    const lowerInput = userInput.toLowerCase();
+  
+    // Work schedule logic (Mon-Thurs, 6am - 4pm PT)
+    const isAtWork = () => {
+      const now = new Date();
+      const day = now.getDay(); // 0 (Sun) to 6 (Sat)
+      const hour = now.getHours(); // local time assumed to be Pacific
+  
+      return day >= 1 && day <= 4 && hour >= 6 && hour < 16;
+    };
+  
+    // Handle "are you at work?" style questions
+    if (fuzzyMatch(lowerInput, "are you at work") || fuzzyMatch(lowerInput, "at work now")) {
+      return isAtWork() ? "Yes!" : "No, I am available now!";
+    }
+  
+    // Handle time requests
+    if (fuzzyMatch(lowerInput, "time")) {
+      const now = new Date();
+      const pacificTime = now.toLocaleString("en-US", { timeZone: "America/Los_Angeles", hour: 'numeric', minute: 'numeric', hour12: true });
+      return `The current Pacific Time is ${pacificTime}.`;
+    }
+  
+    // Fuzzy keyword match mapping
+    const keywordResponses: { [keyword: string]: string } = {
+      "skills": "You can find my skills listed in the <a href='/skills' class='text-yellow-500 hover:text-yellow-400 underline'>Skills</a> section in the navbar. I have expertise in Cybersecurity and programming, and I hold certifications in Security+, Linux+, and System Administration.",
+      "background": "I graduated from SDSU in 2024 with a bachelor's in Computer Science and now work as a Computer Scientist.",
+      "experience": "I am a Computer Scientist with experience in security analysis and system administration.",
+      "contact": "You can contact me by filling out the <a href='/contact' class='text-yellow-500 hover:text-yellow-400 underline'>contact form</a> on the nav bar above.",
+      "where do you work": "I work at Naval Information Warfare Center Pacific (NIWC PAC).",
+      "hobbies": "I like spending time with friends, gaming, and working on projects like this website!",
+      "what do you do for fun": "I like spending time with friends, gaming, and working on projects like this website!",
+    };
+  
+    for (const keyword in keywordResponses) {
+      if (fuzzyMatch(lowerInput, keyword)) {
+        return keywordResponses[keyword];
+      }
+    }
+  
     const responses: { [key: string]: string } = {
       "who is mark": "I'm Mark Duraid, a Computer Scientist and Cybersecurity enthusiast based in the United States.",
       "who is mark duraid": "I'm Mark Duraid, a Computer Scientist and Cybersecurity enthusiast based in the United States.",
@@ -34,34 +74,17 @@ export default function Chatbot() {
       "what's your name": "I am Mark Duraid.",
       "what is your name": "I am Mark Duraid.",
       "who are you": "I am Mark Duraid.",
-      "how do i contact you": "You can contact me by filling out the <a href='/contact' class='text-yellow-500 hover:text-yellow-400 underline'>contact form</a> on the nav bar above.",
-      "skills": "You can find my skills listed in the <a href='/skills' class='text-yellow-500 hover:text-yellow-400 underline'>Skills</a> section in the navbar. I have expertise in Cybersecurity and programming, and I hold certifications in Security+, Linux+, and System Administration.",
-      "background": "I graduated from SDSU in 2024 with a bachelor's in Computer Science and now work as a Computer Scientist.",
-      "experience": "I am a Computer Scientist with experience in security analysis and system administration.",
-      "where do you work": "I work at Naval Information Warfare Center Pacific (NIWC PAC).",
-      "hobbies": "I like spending time with friends, gaming, and working on projects like this website!",
-      "what do you do for fun": "I like spending time with friends, gaming, and working on projects like this website!",
-      "what time is it": "I'm here to help! Let me know what you need.",
     };
-
-    // Check availability with fuzzy matching
-    if (fuzzyMatch(userInput, "available") || fuzzyMatch(userInput, "availbl") || fuzzyMatch(userInput, "avail")) {
-      return getAvailability();
-    }
-
-    // Check if the input is related to work status (fuzzy matching)
-    if (fuzzyMatch(userInput, "work") || fuzzyMatch(userInput, "working")) {
-      return getAvailability();
-    }
-
-    // Return the default responses if no match is found
+  
     for (const key in responses) {
-      if (fuzzyMatch(userInput, key)) {
+      if (fuzzyMatch(lowerInput, key)) {
         return responses[key];
       }
     }
+  
     return "I'm here to help! Let me know what you need.";
   };
+  
 
   const getAvailability = () => {
     const currentHour = new Date().getHours();
