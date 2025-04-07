@@ -164,7 +164,7 @@ export default function Chatbot() {
                   key={idx}
                   onClick={() => setInput(prompt)}
                   className="chatbot-btn"
-                  style={{ fontSize: "11px", padding: "1rem 1rem", lineHeight: "1", borderColor: "#C9A46A" }}
+                  style={{ fontSize: "11px", padding: "0.6rem 0.6rem", lineHeight: "0.3", borderColor: "#C9A46A",  backgroundColor: "#2a2a2a"}}
                 >
                   {prompt}
                 </button>
@@ -200,18 +200,21 @@ export default function Chatbot() {
           </div>
 
           <div className="p-2 flex border-t border-gray-600 bg-[#2a2a2a]">
-            <input
-              type="text"
-              className="flex-1 p-2 bg-[#2a2a2a] text-white border-none outline-none placeholder-gray-400"
-              placeholder="Type a message..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === "Enter" && sendMessage()}
-            />
-            <button onClick={sendMessage} className="focus:outline-none">
-              <FaPaperPlane className="text-yellow-500 w-5 h-5" />
-            </button>
-          </div>
+          <input
+            type="text"
+            className="flex-1 p-2 bg-[#2a2a2a] text-white border-none outline-none placeholder-gray-400 rounded-l-lg"
+            placeholder="Type a message..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyPress={(e) => e.key === "Enter" && sendMessage()}
+          />
+          <button
+            onClick={sendMessage}
+            className="flex items-center justify-center p-2 bg-[#2a2a2a] border-l border-[#C9A46A] rounded-r-lg hover:bg-[#C9A46A] focus:outline-none"
+          >
+            <FaPaperPlane className="text-yellow-500 w-5 h-5" />
+          </button>
+        </div>
         </div>
       )}
     </div>
