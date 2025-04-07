@@ -75,7 +75,28 @@ export default function Chatbot() {
       if (fuzzyMatch(lowerInput, keyword)) {
         return keywordResponses[keyword];
       }
+
     }
+
+    const getWorkingDuration = () => {
+      const startDate = new Date("2024-07-29"); 
+      const currentDate = new Date();
+    
+      let years = currentDate.getFullYear() - startDate.getFullYear();
+      let months = currentDate.getMonth() - startDate.getMonth();
+    
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+    
+      if (years >= 1) {
+        return `${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}`;
+      } else {
+        return `${months} month${months !== 1 ? 's' : ''}`;
+      }
+    };
+    
 
     const responses: { [key: string]: string } = {
       "who is mark": "I'm Mark Duraid, a Computer Scientist and Cybersecurity enthusiast based in the United States.",
@@ -84,7 +105,12 @@ export default function Chatbot() {
       "what's your name": "I am Mark Duraid.",
       "what is your name": "I am Mark Duraid.",
       "who are you": "I am Mark Duraid.",
-      "where are you from": "I am originally from Baghdad Iraq, but I live in the United States."
+      "where are you from": "I am originally from Baghdad Iraq, but I live in the United States.",
+      "what school did you go to": "I graduated from SDSU in 2024 with a bachelor's in Computer Science.",
+      "how long have you been working?": `I have been working as a computer scientist for about ${getWorkingDuration()}.`,
+      "how long have you been a computer scientist?": `I have been working as a computer scientist for about ${getWorkingDuration()}.`,
+      "linkedin": "You can check out my LinkedIn profile here: <a href='https://www.linkedin.com/in/markduraid/' class='text-yellow-500 hover:text-yellow-400 underline' target='_blank'>Mark Duraid's LinkedIn</a>",
+      "can we communicate?": "Yes, you can communicate with me through my <a href='/contact' class='text-yellow-500 hover:text-yellow-400 underline'>contact form</a> or by connecting with me on <a href='https://www.linkedin.com/in/markduraid/' class='text-yellow-500 hover:text-yellow-400 underline' target='_blank'>LinkedIn</a>.",
     };
 
     for (const key in responses) {
