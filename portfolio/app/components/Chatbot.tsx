@@ -49,6 +49,16 @@ export default function Chatbot() {
       const pacificTime = now.toLocaleString("en-US", { timeZone: "America/Los_Angeles", hour: 'numeric', minute: 'numeric', hour12: true });
       return `The current Pacific Time is ${pacificTime}.`;
     }
+
+    if (
+      lowerInput.includes("education") ||
+      lowerInput.includes("school") ||
+      lowerInput.includes("degree") ||
+      lowerInput.includes("college") ||
+      lowerInput.includes("university")
+    ) {
+      return "I have a Bachelor's degree in Computer Science from San Diego State University.";
+    }
   
     // Fuzzy keyword match mapping
     const keywordResponses: { [keyword: string]: string } = {
