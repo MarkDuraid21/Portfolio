@@ -2,19 +2,18 @@
 import { useState, useEffect, useRef } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 
-// Function to check if the input has a close match to the target keyword
 const fuzzyMatch = (input: string, target: string): boolean => {
   const normalizedInput = input.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
   const normalizedTarget = target.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
-
-  // If the normalized input is a substring of the target, consider it a match
   return normalizedInput.includes(normalizedTarget);
 };
 
 export default function Chatbot() {
-  const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([]);
+  const [messages, setMessages] = useState<{ text: string; isUser: boolean; timestamp: string }[]>([]);
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false); // Track user interaction
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   const getSavedMessages = () => {
@@ -22,45 +21,31 @@ export default function Chatbot() {
     return savedMessages ? JSON.parse(savedMessages) : [];
   };
 
-  const saveMessages = (newMessages: { text: string; isUser: boolean }[]) => {
+  const saveMessages = (newMessages: { text: string; isUser: boolean; timestamp: string }[]) => {
     localStorage.setItem("chatMessages", JSON.stringify(newMessages));
   };
 
+  const getTimestamp = () => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
   const getBotResponse = (userInput: string) => {
     const lowerInput = userInput.toLowerCase();
-  
-    // Work schedule logic (Mon-Thurs, 6am - 4pm PT)
     const isAtWork = () => {
       const now = new Date();
-      const day = now.getDay(); // 0 (Sun) to 6 (Sat)
-      const hour = now.getHours(); // local time assumed to be Pacific
-  
+      const day = now.getDay();
+      const hour = now.getHours();
       return day >= 1 && day <= 4 && hour >= 6 && hour < 16;
     };
-  
-    // Handle "are you at work?" style questions
+
     if (fuzzyMatch(lowerInput, "are you at work") || fuzzyMatch(lowerInput, "at work now")) {
       return isAtWork() ? "Yes!" : "No, I am available now!";
     }
-  
-    // Handle time requests
+
     if (fuzzyMatch(lowerInput, "time")) {
       const now = new Date();
       const pacificTime = now.toLocaleString("en-US", { timeZone: "America/Los_Angeles", hour: 'numeric', minute: 'numeric', hour12: true });
       return `The current Pacific Time is ${pacificTime}.`;
     }
 
-    if (
-      lowerInput.includes("education") ||
-      lowerInput.includes("school") ||
-      lowerInput.includes("degree") ||
-      lowerInput.includes("college") ||
-      lowerInput.includes("university")
-    ) {
-      return "I have a Bachelor's degree in Computer Science from San Diego State University.";
-    }
-  
-    // Fuzzy keyword match mapping
     const keywordResponses: { [keyword: string]: string } = {
       "skills": "You can find my skills listed in the <a href='/skills' class='text-yellow-500 hover:text-yellow-400 underline'>Skills</a> section in the navbar. I have expertise in Cybersecurity and programming, and I hold certifications in Security+, Linux+, and System Administration.",
       "background": "I graduated from SDSU in 2024 with a bachelor's in Computer Science and now work as a Computer Scientist.",
@@ -69,14 +54,29 @@ export default function Chatbot() {
       "where do you work": "I work at Naval Information Warfare Center Pacific (NIWC PAC).",
       "hobbies": "I like spending time with friends, gaming, and working on projects like this website!",
       "what do you do for fun": "I like spending time with friends, gaming, and working on projects like this website!",
+      "what do you work on": "I am a Computer Scientist and work on different projects such as cybersecurity!",
+      "what do you do at work": "I am a Computer Scientist and work on different projects such as cybersecurity!",
+      "education": "Grossmont College for my associate's and SDSU for my bachelor's—both in Computer Science.",
+      "degree": "I have an associate's and a bachelor's degree in Computer Science.",
+      "jobs": "I've worked as a Computer Scientist, Security Automation Engineer Intern, and Machine Learning Engineer Intern.",
+      "work history": "Computer Scientist | July 2024 - Present<br>Security Automation Engineer Intern | Jan 2024 - Mar 2024<br>Machine Learning Engineer Intern | Oct 2023 - Dec 2023",
+      "projects": "One of my main projects is the very website you're on right now!",
+      "show me your work": "Check out my personal website—this one!",
+      "certifications": "CompTIA Security+, Linux+, Red Hat System Administration I (RH124), Microsoft Security Fundamentals",
+      "languages": "I speak English and Arabic.",
+      "resume": "You can contact me using the <a href='/contact' class='text-yellow-500 hover:text-yellow-400 underline'>contact form</a> to get my resume.",
+      "cv": "You can contact me using the <a href='/contact' class='text-yellow-500 hover:text-yellow-400 underline'>contact form</a> to get my resume.",
+      "why cs": "I've always loved problem-solving and building things—Computer Science lets me do both!",
+      "why cybersecurity": "Cybersecurity excites me because it's like a high-stakes puzzle that protects people and systems.",
+      "favorite tech": "I love anything related to AI, security tools, and sleek UI frameworks like Tailwind CSS."
     };
-  
+
     for (const keyword in keywordResponses) {
       if (fuzzyMatch(lowerInput, keyword)) {
         return keywordResponses[keyword];
       }
     }
-  
+
     const responses: { [key: string]: string } = {
       "who is mark": "I'm Mark Duraid, a Computer Scientist and Cybersecurity enthusiast based in the United States.",
       "who is mark duraid": "I'm Mark Duraid, a Computer Scientist and Cybersecurity enthusiast based in the United States.",
@@ -84,53 +84,51 @@ export default function Chatbot() {
       "what's your name": "I am Mark Duraid.",
       "what is your name": "I am Mark Duraid.",
       "who are you": "I am Mark Duraid.",
+      "where are you from": "I am originally from Baghdad Iraq, but I live in the United States."
     };
-  
+
     for (const key in responses) {
       if (fuzzyMatch(lowerInput, key)) {
         return responses[key];
       }
     }
-  
-    return "I'm here to help! Let me know what you need.";
-  };
-  
 
-  const getAvailability = () => {
-    const currentHour = new Date().getHours();
-    return currentHour >= 16 || currentHour < 5 ? "I am available now." : "I'm here to help! Let me know what you need.";
+    return "I'm here to help! Let me know what you need.";
   };
 
   const sendMessage = () => {
     if (!input.trim()) return;
 
-    const newMessages = [...messages, { text: input, isUser: true }];
+    const newMessages = [...messages, { text: input, isUser: true, timestamp: getTimestamp() }];
     setMessages(newMessages);
     setInput("");
-
     saveMessages(newMessages);
 
+    setIsTyping(true);
+    setHasInteracted(true); // User has interacted
     setTimeout(() => {
       const botResponse = getBotResponse(input);
-      const updatedMessages = [...newMessages, { text: botResponse, isUser: false }];
+      const updatedMessages = [...newMessages, { text: botResponse, isUser: false, timestamp: getTimestamp() }];
       setMessages(updatedMessages);
+      setIsTyping(false);
       saveMessages(updatedMessages);
-    }, 500);
+    }, 1000);
   };
 
   useEffect(() => {
     if (isOpen) {
       const savedMessages = getSavedMessages();
-      setMessages(savedMessages.length > 0 ? savedMessages : [{ text: "Hello, how can I help you?", isUser: false }]);
+      setMessages(savedMessages.length > 0 ? savedMessages : [{ text: "Hello, how can I help you?", isUser: false, timestamp: getTimestamp() }]);
     }
   }, [isOpen]);
 
-  // Scroll to the bottom when messages change
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
+
+  const quickPrompts = ["What are your skills?", "Where do you work?", "Show me your work", "What's your background?"];
 
   return (
     <div className="fixed bottom-5 right-5 z-[9999]">
@@ -144,7 +142,7 @@ export default function Chatbot() {
       )}
 
       {isOpen && (
-        <div className="w-80 h-96 bg-black text-white rounded-2xl shadow-xl flex flex-col overflow-hidden border border-yellow-500">
+        <div className="w-80 h-[30rem] bg-black text-white rounded-2xl shadow-xl flex flex-col overflow-hidden border border-[#C9A46A]">
           <div className="p-3 bg-[#2a2a2a] text-white font-bold flex justify-center relative">
             <span>Chatbot</span>
             <button
@@ -152,34 +150,52 @@ export default function Chatbot() {
                 setIsOpen(false);
                 localStorage.removeItem("chatMessages");
               }}
-              className="absolute right-3 top-1 text-white hover:text-yellow-500 text-lg font-bold focus:outline-none"
+              className="absolute right-3 top-1 text-white hover:text-[#C9A46A] text-lg font-bold focus:outline-none"
             >
               ✖
             </button>
           </div>
 
+          {/* Only show quick prompts if the user hasn't interacted yet */}
+          {!hasInteracted && (
+            <div className="flex flex-wrap gap-2 justify-center p-2 bg-black border-b border-[#C9A46A]">
+              {quickPrompts.map((prompt, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setInput(prompt)}
+                  className="chatbot-btn"
+                  style={{ fontSize: "11px", padding: "1rem 1rem", lineHeight: "1", borderColor: "#C9A46A" }}
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          )}
+
           <div className="flex-1 overflow-y-auto p-3 space-y-2">
             {messages.map((msg, index) => (
-              <div key={index} className={`flex items-center space-x-2 ${msg.isUser ? "justify-end" : "justify-start"}`}>
-                {msg.isUser ? (
-                  <>
-                    <div className="p-2 max-w-[80%] rounded-lg bg-yellow-500 text-white self-end">{msg.text}</div>
-                    <div className="w-8 h-8 rounded-full bg-yellow-500 text-black flex items-center justify-center text-xs font-bold">You</div>
-                  </>
-                ) : (
-                  <>
-                    <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-yellow-500 relative">
-                   <img src="/images/MD13bgRemoved.png" alt="Bot" className="w-[100%] h-[100%] object-cover absolute top-[70%] left-[40%] transform -translate-x-1/2 -translate-y-1/2" />
-                    </div>
-
-                    <div className="p-2 max-w-[80%] rounded-lg bg-[#2a2a2a] text-white self-start">
-                      <span dangerouslySetInnerHTML={{ __html: msg.text }} />
-                    </div>
-                  </>
-                )}
+              <div key={index} className={`flex flex-col space-y-1 ${msg.isUser ? "items-end" : "items-start"}`}>
+                <div className={`flex items-center space-x-2 ${msg.isUser ? "justify-end" : "justify-start"}`}>
+                  {msg.isUser ? (
+                    <>
+                      <div className="p-2 max-w-[80%] rounded-lg bg-yellow-500 text-white self-end">{msg.text}</div>
+                      <div className="w-8 h-8 rounded-full bg-yellow-500 text-black flex items-center justify-center text-xs font-bold">You</div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-yellow-500 relative">
+                        <img src="/images/MD13bgRemoved.png" alt="Bot" className="w-[100%] h-[100%] object-cover absolute top-[70%] left-[40%] transform -translate-x-1/2 -translate-y-1/2" />
+                      </div>
+                      <div className="p-2 max-w-[80%] rounded-lg bg-[#2a2a2a] text-white self-start">
+                        <span dangerouslySetInnerHTML={{ __html: msg.text }} />
+                      </div>
+                    </>
+                  )}
+                </div>
+                <div className="text-xs text-gray-400">{msg.timestamp}</div>
               </div>
             ))}
-            {/* Add a reference element at the bottom of the message container */}
+            {isTyping && <div className="text-sm text-gray-400">Mark is typing...</div>}
             <div ref={messagesEndRef} />
           </div>
 
